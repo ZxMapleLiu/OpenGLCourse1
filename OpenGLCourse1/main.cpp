@@ -203,6 +203,9 @@ int main(int argc, char** argv)
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 	/*	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);//描边模式*/
+	//深度测试！
+	glEnable(GL_DEPTH_TEST);
+
 	Shader ourShader("./shaders/shader.vert", "./shaders/shader.frag"); //使用我们自己定义的着色器
 	//第一个纹理
 	unsigned int texture1;
@@ -280,7 +283,7 @@ int main(int argc, char** argv)
 		processInput(window);
 		//渲染
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //深度测试！
 		// 		//画图形
 		// 		glUseProgram(shaderProgram);    // 使用自己的着色器时仅有这一行被替换了，
 												//程序中前面创建vertexShader和fragmentShader的部分也可以删除
