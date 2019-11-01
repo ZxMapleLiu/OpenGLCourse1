@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -74,8 +74,8 @@
     <LibraryPath>G:\codes\freeglut-3.2.1\build\lib\Debug;G:\codes\glew-2.1.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>G:\codes\glfw-3.3\include;G:\codes\glad\include;$(IncludePath)</IncludePath>
-    <LibraryPath>G:\codes\glfw-3.3\build\src\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\glm-0.9.9.6\glm;E:\glad\include;C:\Users\ZxMapleLiu\glfw-3.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\ZxMapleLiu\glfw-3.3\build\src\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -133,6 +133,21 @@
   <ItemGroup>
     <ClCompile Include="..\..\glad\src\glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="shader.cpp" />
+    <ClCompile Include="stb_image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\shader.frag" />
+    <None Include="shaders\shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="texture\awesomeface.png" />
+    <Image Include="texture\container.jpg" />
+    <Image Include="texture\wall.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
