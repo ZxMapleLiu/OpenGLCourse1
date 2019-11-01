@@ -1,0 +1,47 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 01.11.2019 15:31:42
+
+newmtl Material_34
+	Ns 42.8807
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\3.png
+	map_Kd E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\3.png
+	map_Ks E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\4.png
+
+newmtl Material_35
+	Ns 42.8807
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\5.png
+	map_Kd E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\5.png
+	map_Ks E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\6.png
+
+newmtl Material_36
+	Ns 42.8807
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.2000 0.2000 0.2000
+	Kd 0.8000 0.8000 0.8000
+	Ks 0.2000 0.2000 0.2000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\7.png
+	map_Kd E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\7.png
+	map_Ks E:\openglcourse\OpenGLCourse1\model\AIBoss\bossout.fbm\8.png
