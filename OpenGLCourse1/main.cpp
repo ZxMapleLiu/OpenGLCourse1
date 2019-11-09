@@ -205,11 +205,7 @@ int main(int argc, char** argv)
 // 	glBindVertexArray(0);
 	/*	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);//描边模式*/
 	//深度测试！
-	glEnable(GL_DEPTH_TEST);
 
-	Shader ourShader("./shaders/shader.vert", "./shaders/shader.frag"); //使用我们自己定义的着色器
-
-	Model ourModel(("./model/AIBoss/bossout.fbx"));
 // 	//第一个纹理
 // 	unsigned int texture1;
 // 	glGenTextures(1, &texture1);
@@ -278,7 +274,11 @@ int main(int argc, char** argv)
 // 	unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
 // 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
+	glEnable(GL_DEPTH_TEST);
 
+	Shader ourShader("./shaders/shader.vert", "./shaders/shader.frag"); //使用我们自己定义的着色器
+
+	Model ourModel(("./model/AIBoss/model.obj"));
 	//不断绘制，接受用户输入
 	while (!glfwWindowShouldClose(window))
 	{
