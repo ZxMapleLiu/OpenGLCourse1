@@ -52,6 +52,18 @@
     <None Include="shaders\shader.frag">
       <Filter>源文件\shaders</Filter>
     </None>
+    <None Include="shaders\color.frag">
+      <Filter>源文件\shaders</Filter>
+    </None>
+    <None Include="shaders\color.vert">
+      <Filter>源文件\shaders</Filter>
+    </None>
+    <None Include="shaders\lamp.frag">
+      <Filter>源文件\shaders</Filter>
+    </None>
+    <None Include="shaders\lamp.vert">
+      <Filter>源文件\shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="texture\wall.jpg">
