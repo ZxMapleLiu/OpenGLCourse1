@@ -74,8 +74,8 @@
     <LibraryPath>G:\codes\freeglut-3.2.1\build\lib\Debug;G:\codes\glew-2.1.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\assimp-5.0.0\include;E:\glm-0.9.9.6\glm;E:\glad\include;C:\Users\ZxMapleLiu\glfw-3.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\assimp-5.0.0\build\code\Release;C:\Users\ZxMapleLiu\glfw-3.3\build\src\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\assimp-5.0.0\include;G:\codes\glm;G:\codes\glad\include;G:\codes\glfw-3.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\assimp-5.0.0\build\code\Release;G:\codes\glfw-3.3\build\src\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -131,12 +131,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\glad\src\glad.c" />
+    <ClCompile Include="G:\codes\glad\src\glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="camera.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
