@@ -74,8 +74,8 @@
     <LibraryPath>G:\codes\freeglut-3.2.1\build\lib\Debug;G:\codes\glew-2.1.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>E:\assimp-5.0.0\include;G:\codes\glm;G:\codes\glad\include;G:\codes\glfw-3.3\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\assimp-5.0.0\build\code\Release;G:\codes\glfw-3.3\build\src\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>G:\codes\assimp-5.0.0\include;G:\codes\glm;G:\codes\glad\include;G:\codes\glfw-3.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>G:\codes\assimp-5.0.0\build\code\Release;G:\codes\glfw-3.3\build\src\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
