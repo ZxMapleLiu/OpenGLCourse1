@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MESH_H
+#define MESH_H
+
 #include <glad/glad.h> // holds all OpenGL type declarations
 
 #include <glm/glm.hpp>
@@ -13,7 +15,6 @@
 #include <vector>
 using namespace std;
 
-//定义顶点
 struct Vertex {
 	// position
 	glm::vec3 Position;
@@ -26,7 +27,7 @@ struct Vertex {
 	// bitangent
 	glm::vec3 Bitangent;
 };
-//定义纹理
+
 struct Texture {
 	unsigned int id;
 	string type;
@@ -35,25 +36,25 @@ struct Texture {
 
 class Mesh {
 public:
-	//网格数据
+	/*  Mesh Data  */
 	vector<Vertex> vertices;
 	vector<unsigned int> indices;
 	vector<Texture> textures;
 	unsigned int VAO;
 
-	//函数
-	// 构造函数
+	/*  Functions  */
+	// constructor
 	Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures)
 	{
 		this->vertices = vertices;
 		this->indices = indices;
 		this->textures = textures;
 
-		// 调用初始化函数来初始化VBO
+		// now that we have all the required data, set the vertex buffers and its attribute pointers.
 		setupMesh();
 	}
 
-	// 渲染网格
+	// render the mesh
 	void Draw(Shader shader)
 	{
 		// bind appropriate textures
@@ -114,6 +115,7 @@ private:
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
+
 		// set the vertex attribute pointers
 		// vertex Positions
 		glEnableVertexAttribArray(0);
@@ -134,3 +136,4 @@ private:
 		glBindVertexArray(0);
 	}
 };
+#endif

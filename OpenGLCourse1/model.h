@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MODEL_H
+#define MODEL_H
+
 #include <glad/glad.h> 
 
 #include <glm/glm.hpp>
@@ -24,19 +26,20 @@ unsigned int TextureFromFile(const char* path, const string& directory, bool gam
 class Model
 {
 public:
-	//模型信息
-	vector<Texture> textures_loaded;	//将所有已存储的纹理材质存在STL VECTOR中防止重复加载
+	/*  Model Data */
+	vector<Texture> textures_loaded;	// stores all the textures loaded so far, optimization to make sure textures aren't loaded more than once.
 	vector<Mesh> meshes;
 	string directory;
 	bool gammaCorrection;
 
-	//构造函数，加载模型
+	/*  Functions   */
+	// constructor, expects a filepath to a 3D model.
 	Model(string const& path, bool gamma = false) : gammaCorrection(gamma)
 	{
 		loadModel(path);
 	}
 
-	// 绘制模型网格
+	// draws the model, and thus all its meshes
 	void Draw(Shader shader)
 	{
 		for (unsigned int i = 0; i < meshes.size(); i++)
@@ -44,26 +47,27 @@ public:
 	}
 
 private:
-	//使用assimp库加载模型
+	/*  Functions   */
+	// loads a model with supported ASSIMP extensions from file and stores the resulting meshes in the meshes vector.
 	void loadModel(string const& path)
 	{
-		//读取文件
+		// read file via ASSIMP
 		Assimp::Importer importer;
 		const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
-		// 查错
-		if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) // 非零情况
+		// check for errors
+		if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) // if is Not Zero
 		{
 			cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
 			return;
 		}
-		// 记录文件目录
+		// retrieve the directory path of the filepath
 		directory = path.substr(0, path.find_last_of('/'));
 
-		// 处理ASSIMP根节点
+		// process ASSIMP's root node recursively
 		processNode(scene->mRootNode, scene);
 	}
 
-	// 递归遍历. 重复处理每一个网格
+	// processes a node in a recursive fashion. Processes each individual mesh located at the node and repeats this process on its children nodes (if any).
 	void processNode(aiNode* node, const aiScene* scene)
 	{
 		// process each mesh located at the current node
@@ -236,3 +240,4 @@ unsigned int TextureFromFile(const char* path, const string& directory, bool gam
 
 	return textureID;
 }
+#endif
